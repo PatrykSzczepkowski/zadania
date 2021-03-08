@@ -1,0 +1,64 @@
+#zad 1 
+filmy = ["Skazani na Shawshank","Batman","Nietykalni","Zielona mila","Ojciec chrzestny","Breaking Bad"]
+print(filmy)
+filmy.reverse()
+print(filmy)
+filmy.insert(5,"Pianista")
+filmy.insert(6,"Incepcja")
+filmy.insert(7,"Django")
+filmy.insert(8,"Milczenie owiec")
+print(filmy)
+print(len(filmy))
+
+#zad2
+slownik={"tytul0":"Skazani na Shawshank","tytul1":"Batman","tytul2":"Nietykalni","tytul3":"Zielona mila","tytul4":"Ojciec chrzestny","tytul5":"Breaking Bad"}
+slownik["tytul6"]="Forrest Gump"
+print(slownik)
+print(slownik["tytul6"])
+
+#zad3
+lekcje = {"CAD komputerowe wspomaganie programowania":"CAD","Wizualizacja danych":"WD","Przedmiot humanizujący":"PH","Język angielski":"ANG","Rachunek różniczkowy i całkowy":"RRC","Elementy matematyki dyskretnej":"EMD","Programowanie strukturalne":"PS"}
+print(lekcje)
+print(len(lekcje))
+
+#zad4
+liczba=input("Podaj liczbe")
+liczba=int(liczba)
+print(type(liczba))
+print(liczba**liczba)
+
+#zad5
+import sys as system
+a = system.stdin.readline()
+system.stdout.write(str(a.count("a")))
+
+#zad6
+a=int(input("Podaj 1 liczbe: "))
+b=int(input("Podaj 2 liczbe: "))
+c=int(input("Podaj 3 liczbe: "))
+
+if a%2==0 : print("parzysta,")
+else: print("nieparzysta,")
+
+if b>c: print("b>c,")
+elif b<c: print("b<c,")
+elif b==c : print("takie same a i c")
+
+#zad7 
+lista = [2,2.5,3,4,5]
+for x in range(1,len(lista),1):
+	print(lista[x]+lista[x-1])
+
+#zad9
+lista = [1,2,3,4,5,6]
+for x in lista:
+if x == 1 or x == 6: print("O"*6)
+elif x == 2 or x == 3 or x == 4 or x == 5: print("O    O")
+
+#zad10
+a = input("Podaj liczbę:")
+try: float(a)*0==0
+except ValueError: print("to nie jest liczba")
+
+
+
