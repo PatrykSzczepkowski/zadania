@@ -37,6 +37,7 @@ print(x.ile_produktu())
 print(x.ile_kosztuje())
 
 zad5
+from math import *
 class Ciagi:
     def __init__(self, a1, r, n):
         self.a1 = float(a1)
