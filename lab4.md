@@ -75,3 +75,6 @@ ciag.pobierz_elementy()
 ciag.pobierz_parametry()
 ciag.policz_sume()
 ciag.policz_elementy()
+
+zad6
+...
