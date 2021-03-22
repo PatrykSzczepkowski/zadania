@@ -1,0 +1,60 @@
+zad 1 
+
+a=[1-x for x in range (10)]
+b=[4**x for x in range(7)]
+c=[x for x in a if x%2==0]
+print(a)
+print(b)
+print(c)
+
+zad2
+import random
+lista1 = [int(random.random()*1000) for x in range(10)]
+print(lista1)
+lista2=[x for x in lista1 if x%2==0]
+print(lista2)
+
+zad3
+slownik={"jablka":"kg","ananas":"sztuki","melon":"sztuki","ziemniaki":"kg"}
+a = {key: value for key, value in slownik.items() if value in "sztuki"}
+print(a)
+
+zad4
+def czytrojkat(a,b,c):
+    if a**2+b**2==c**2:
+        print("Jest prostokatny")
+    else:
+        print("Nie jest to trojkat prostokatny")
+
+czytrojkat(4,3,5)
+
+zad5
+def trapez(a=2,b=4,h=6):
+    pole=((a+b)*h)/2
+    print(pole)
+trapez(4,4,5)
+
+zad6
+def ciag(a1=1, b=4, ile=3):
+    S = a1 * ((1 - b ** ile) / (1 - b))
+    print(S)
+ciag(2,5,6)
+
+zad8
+
+produkty = {
+    "Ser": "2.00",
+    "Szynka": "3.00",
+    "Mleko": "2.00"
+}
+print("Liczba rzeczy: " + str(len(produkty)))
+
+def suma(lista):
+    suma = 0.0
+    for x in range(len(lista)):
+        suma += float(list(lista.values())[x])
+    print("Cena rzeczy: " + str(suma))
+
+suma(produkty)
+
+
