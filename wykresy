@@ -8,3 +8,15 @@ g = df.groupby(['Rok']).agg({'Liczba':['sum']})
 w = g.plot()
 plt.legend(loc='lower right')
 plt.show()
+
+zad2
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_excel('imiona.xlsx', header=0)
+g = df.groupby(['Plec']).agg({'Plec':['count']})
+w = g.plot.bar()
+plt.legend(loc='lower left')
+plt.xticks(rotation=0)
+plt.show()
