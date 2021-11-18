@@ -1,0 +1,109 @@
+from typing import Any
+
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+        self.tail = None
+
+    def __str__(self):
+        if (self.next == None):
+            return f'{self.value}'
+        return f'{self.value} -> {self.next}'
+
+    def push(self, value: Any):
+        nowy = Node(value) #tworzenie nowego node
+        nowy.next = self.head #nowy wskazuje na head, czyli pierwszy el
+        self.head = nowy #przypisanie wartosci do pierwszego elementu z listy
+        if(self.tail==None):
+            self.tail=nowy #jesli lista jest pusta, to elementem jest tylko nowy
+
+    def append(self, value: Any):
+        nowy = Node(value) #nowy node
+        if(self.tail!=None): #jesli ostatnia wartosc != None
+            self.tail.next=nowy #tail wskazuje na nowy
+            self.tail = nowy #tail=nowy
+        if(self.head==None): #head pusty to head=nowy
+            self.head=nowy
+
+    def node(self, at: int): #zwróci węzeł znajdujący się na wskazanej pozycji
+        if (at < len(self)):
+            dane = self.head
+            for at in range(at):
+                dane = dane.next
+            return dane
+        return None
+
+    def insert(self, value: Any, after: Node): #wstawi nowy węzeł tuż za węzłem wskazanym w parametrze
+        nowy= Node(value)
+        nowy.next = after.next #wskaznik nowego wskazuje na wskaznik after
+        after.next = nowy #nastepny el po after to nowy
+
+    def pop(self):
+        pierwszy = self.head
+        self.head = pierwszy.next
+        return pierwszy.value
+
+    def remove_last(self): #usunie ostatni element z listy i go zwróci
+        ostatni = self.tail
+        node = self.head
+        while node.next != ostatni:
+            node = node.next
+        node.next = None
+        self.tail = node
+        return ostatni.value
+
+    def remove(self, after: Node):
+        usun = after.next
+        after.next = usun.next
+
+    def __str__(self):
+        return f'{self.head}'
+
+    def __len__(self):
+        dlugosc = 0
+        node = self.head
+        while node:
+            dlugosc= dlugosc+1
+            node = node.next
+        return dlugosc
+
+
+class Stack:
+    _storage: LinkedList
+
+    def __len__(self):
+        dlugosc = 0
+        dane = self._storage.head
+        while (dane != None):
+            dane = dane.next
+            dlugosc += 1
+        return dlugosc
+
+    def push(self, element: Any):
+        self._storage.push(element)
+
+    def pop(self):
+        return self._storage.pop()
+
+
+
+class Queue:
+    _storage=LinkedList()
+
+    def __len__(self):
+        return len(self._storage)
+
+    def peek(self) -> Any:
+        return self._storage.head.value
+
+    def enqueue(self, element: Any) -> None:
+        self._storage.append(element)
+
+    def dequeue(self) -> Any:
+        return self._s
