@@ -107,3 +107,7 @@ class Queue:
 
     def dequeue(self) -> Any:
         return self._s
+
+
+https://github.com/Nocker29/AiSD/blob/main/lab2.py
+https://github.com/BeataOstrowska/AlgStrDan/blob/main/readme
